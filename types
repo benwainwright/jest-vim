@@ -1,0 +1,13 @@
+import { NeovimClient } from "neovim";
+import { MatcherType } from "./matcher-type";
+
+declare global {
+  namespace jest {
+    interface VimMatchers extends jest.Matchers<NeovimClient> {
+      toHaveTextInSignColumn(
+        text: string,
+        buffer?: number
+      ): Promise<jest.CustomMatcherResult>;
+    }
+  }
+}

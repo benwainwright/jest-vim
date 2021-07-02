@@ -1,17 +1,6 @@
 import { NeovimClient } from "neovim";
 import { MatcherType } from "../types/matcher-type";
 
-declare global {
-  namespace jest {
-    interface VimMatchers extends jest.Matchers<NeovimClient> {
-      toHaveTextInSignColumn(
-        text: string,
-        buffer?: number
-      ): Promise<jest.CustomMatcherResult>;
-    }
-  }
-}
-
 interface DefinedSign {
   name: string;
   texthl: string;
@@ -70,5 +59,3 @@ export const toHaveTextInSignColumn: MatcherType<
     message: () => `Could not find '${text}' in sign column for current buffer`,
   };
 };
-
-expect.extend({ toHaveTextInSignColumn });

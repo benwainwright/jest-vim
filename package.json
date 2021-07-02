@@ -1,8 +1,13 @@
 {
   "name": "jest-vim",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["/dist"],
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^15.14.0",
